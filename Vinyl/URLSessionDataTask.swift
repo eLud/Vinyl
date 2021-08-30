@@ -27,4 +27,12 @@ public final class URLSessionDataTask: Foundation.URLSessionDataTask, URLSession
    public override func cancel() {
         // We won't do anything here
     }
+
+    public override var countOfBytesReceived: Int64 {
+        return super.countOfBytesReceived
+    }
+
+    public override var countOfBytesSent: Int64 {
+        return super.countOfBytesSent
+    }
 }
