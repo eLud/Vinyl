@@ -8,11 +8,11 @@
 
 import Foundation
 
-public final class URLSessionDataTask: Foundation.URLSessionDataTask, URLSessionTaskType {
+public class URLSessionDataTask: Foundation.URLSessionDataTask, URLSessionTaskType {
     
     fileprivate let completion: () -> Void
     
-    init(completion: @escaping () -> Void) {
+    required init(completion: @escaping () -> Void) {
         self.completion = completion
     }
     
@@ -29,10 +29,12 @@ public final class URLSessionDataTask: Foundation.URLSessionDataTask, URLSession
     }
 
     public override var countOfBytesReceived: Int64 {
+        print("Vinyl's countOfBytesReceived")
         return super.countOfBytesReceived
     }
 
     public override var countOfBytesSent: Int64 {
+        print("Vinyl's countOfBytesSent")
         return super.countOfBytesSent
     }
 }
