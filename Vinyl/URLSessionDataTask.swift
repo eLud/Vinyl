@@ -29,14 +29,14 @@ public class URLSessionDataTask: Foundation.URLSessionDataTask, URLSessionTaskTy
     }
 
     public override var countOfBytesReceived: Int64 {
-        guard super.responds(to: #selector(getter: self.countOfBytesReceived)) else {
+        guard super.responds(to: #selector(getter: super.countOfBytesReceived)) else {
             return 0
         }
         return super.countOfBytesReceived
     }
 
     public override var countOfBytesSent: Int64 {
-        guard super.responds(to: #selector(getter: self.countOfBytesSent)) else {
+        guard super.responds(to: #selector(getter: super.countOfBytesSent)) else {
             return 0
         }
         return super.countOfBytesSent
