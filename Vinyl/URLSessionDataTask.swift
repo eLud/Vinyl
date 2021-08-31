@@ -29,12 +29,16 @@ public class URLSessionDataTask: Foundation.URLSessionDataTask, URLSessionTaskTy
     }
 
     public override var countOfBytesReceived: Int64 {
-        print("Vinyl's countOfBytesReceived")
+        guard super.responds(to: #selector(getter: self.countOfBytesReceived)) else {
+            return 0
+        }
         return super.countOfBytesReceived
     }
 
     public override var countOfBytesSent: Int64 {
-        print("Vinyl's countOfBytesSent")
+        guard super.responds(to: #selector(getter: self.countOfBytesSent)) else {
+            return 0
+        }
         return super.countOfBytesSent
     }
 }
